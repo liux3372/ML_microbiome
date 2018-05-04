@@ -1,0 +1,6 @@
+Model	Random Forest
+Error type	out-of-bag
+Estimated error	0.21324
+Baseline error (for random guessing)	0.24265
+Ratio baseline error to observed error	1.13793
+Number of trees	500

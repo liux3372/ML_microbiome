@@ -1,0 +1,12 @@
+#!/usr/bin/env Rscript
+x<-read.table("all.txt")
+#pdf("plot.pdf",width=6,height=4,paper='special')
+pdf("plot.pdf")
+plot(rownames(x), t(x),main="accuracy vs. number of running",xlab="num",ylab="accuracy",col="blue")
+dev.off()
+sink("result.txt")
+print("standard deviation")
+sd(t(x))
+print("summary")
+summary(x)
+sink()

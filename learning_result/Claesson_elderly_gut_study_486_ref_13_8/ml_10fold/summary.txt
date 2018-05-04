@@ -1,0 +1,6 @@
+Model	Random Forest
+Error type	10-fold cross validation
+Estimated error (mean +/- s.d.)	0.04706 +/- 0.02480
+Baseline error (for random guessing)	0.05357
+Ratio baseline error to observed error	1.13839
+Number of trees	500

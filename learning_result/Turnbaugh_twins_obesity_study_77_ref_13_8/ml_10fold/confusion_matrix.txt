@@ -1,0 +1,3 @@
+True\Predicted	Lean	Obese	Class error
+Lean	8	25	0.757575757575758
+Obese	5	98	0.0485436893203883

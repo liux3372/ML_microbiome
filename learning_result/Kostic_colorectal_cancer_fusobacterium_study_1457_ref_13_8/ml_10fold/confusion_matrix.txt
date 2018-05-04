@@ -1,0 +1,4 @@
+True\Predicted	Healthy	None	Tumor	Class error
+Healthy	80	0	15	0.157894736842105
+None	0	0	5	1
+Tumor	10	0	80	0.111111111111111

@@ -1,0 +1,79 @@
+Ninja 1.3.1
+Ninja database directory is is/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97
+Running Ninja filter...
+"/Users/xinyuan/Desktop/MICE8992/ninja/bin/ninja_filter_mac" "Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8/study_1522_split_library_seqs.fna" "/Users/xinyuan/Desktop/machine-learning4/data/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8/ninja/ninja"  RC D 1
+Not using paired-end reads 
+Performing NINJA replicon-denoising at 1 compacted reads.
+Reverse complementing the sequences.
+Number of sequences: 5028278
+Total reads considered: 5028278
+
+DONE SORTING. 
+1825 Samples found.
+Ninja filter time: 27.1061098576
+Running Bowtie...
+/Users/xinyuan/Desktop/MICE8992/ninja/bowtie2-align-s --no-head -x /Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97 -S "/Users/xinyuan/Desktop/machine-learning4/data/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8/ninja/alignments.txt" --np 0 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min "L,0,-0.03" --norc -f "/Users/xinyuan/Desktop/machine-learning4/data/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8/ninja/ninja_filt.fa" -p 4 -k 1
+
+Bowtie time: 324.528638124
+Running Ninja parse...
+"/Users/xinyuan/Desktop/MICE8992/ninja/bin/ninja_parse_filtered_mac" "/Users/xinyuan/Desktop/machine-learning4/data/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8/ninja/ninja" "/Users/xinyuan/Desktop/machine-learning4/data/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8/ninja/alignments.txt" "/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97.db" "/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97.taxonomy"
+Opened /Users/xinyuan/Desktop/machine-learning4/data/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8/ninja/ninja_otutable.biom for OTU Table writing
+Total OTUs available: 99322
+Number of unique samples: 1825, max reads: 708066
+Total reads expanded: 4506971
+Run complete.
+Ninja parse time: 3.9958319664
+summarize_taxa.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries/ -L 1
+summarize_taxa.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries/ -L 2
+summarize_taxa.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries/ -L 3
+summarize_taxa.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries/ -L 4
+summarize_taxa.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries/ -L 5
+summarize_taxa.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries/ -L 6
+summarize_taxa.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries/ -L 7
+alpha_diversity.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree -o output/alpha_div/alphadiv.txt
+beta_diversity.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -m weighted_unifrac -o output/beta_div/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -m unweighted_unifrac -o output/beta_div/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -m bray_curtis -o output/beta_div/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp1.Lean.CI.E01.Cultured.26dpc.CI20.613229. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp1.Lean.CI.E01.Cultured.26dpc.CI20.792900. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp1.Lean.DTFD.E03.Cec1.PM102.612540. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp1.Lean.DTFD.E03.Cec1.PM99.613244. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp2.Lean.K02.LoSFHiFV.7dpc.A5.793132. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp2.Obese.K02.HiSFLoFV.6dpc.B16.792783. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp1.Lean.CI.E01.Cultured.26dpc.CI20.613229. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp1.Lean.CI.E01.Cultured.26dpc.CI20.792900. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp1.Lean.DTFD.E03.Cec1.PM102.612540. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp1.Lean.DTFD.E03.Cec1.PM99.613244. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp2.Lean.K02.LoSFHiFV.7dpc.A5.793132. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample tp2.Obese.K02.HiSFLoFV.6dpc.B16.792783. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2507: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  VisibleDeprecationWarning)
+biom summarize-table -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o ninja/otu_summary.txt
+single_rarefaction.py -i output/Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -d 831
+summarize_taxa.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 1
+summarize_taxa.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 2
+summarize_taxa.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 3
+summarize_taxa.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 4
+summarize_taxa.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 5
+summarize_taxa.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 6
+summarize_taxa.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 7
+alpha_diversity.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree -o output/alpha_div_rare/rare_alphadiv.txt
+beta_diversity.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -m weighted_unifrac -o output/beta_div_rare/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -m unweighted_unifrac -o output/beta_div_rare/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -m bray_curtis -o output/beta_div_rare/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+/macqiime/anaconda/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2507: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  VisibleDeprecationWarning)
+biom summarize-table -i output/rare_Ridaura_Cohousing_Discordant_Humanized_Mice_Titanium_study_1522_ref_13_8.biom -o ninja/otu_summary_rare.txt

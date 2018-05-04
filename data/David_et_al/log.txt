@@ -1,0 +1,83 @@
+Ninja 1.3.1
+Ninja database directory is is/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97
+Running Ninja filter...
+"/Users/xinyuan/Desktop/MICE8992/ninja/bin/ninja_filter_mac" "David_et_al/formatted_input_fasta.fna" "/Users/xinyuan/Desktop/process/data/David_et_al/ninja/ninja"   D 1
+Not using paired-end reads 
+Performing NINJA replicon-denoising at 1 compacted reads.
+WARNING: Found 1 sequences with ambiguity (13 ambiguous bases).
+Number of sequences: 16613631
+Total reads considered: 16613630
+
+DONE SORTING. 
+466 Samples found.
+Ninja filter time: 22.9108669758
+Running Bowtie...
+/Users/xinyuan/Desktop/MICE8992/ninja/bowtie2-align-s --no-head -x /Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97 -S "/Users/xinyuan/Desktop/process/data/David_et_al/ninja/alignments.txt" --np 0 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min "L,0,-0.03" --norc -f "/Users/xinyuan/Desktop/process/data/David_et_al/ninja/ninja_filt.fa" -p 4 -k 1
+
+Bowtie time: 60.8623011112
+Running Ninja parse...
+"/Users/xinyuan/Desktop/MICE8992/ninja/bin/ninja_parse_filtered_mac" "/Users/xinyuan/Desktop/process/data/David_et_al/ninja/ninja" "/Users/xinyuan/Desktop/process/data/David_et_al/ninja/alignments.txt" "/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97.db" "/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97.taxonomy"
+Opened /Users/xinyuan/Desktop/process/data/David_et_al/ninja/ninja_otutable.biom for OTU Table writing
+Total OTUs available: 99322
+Number of unique samples: 466, max reads: 735259
+Total reads expanded: 14621721
+Run complete.
+Ninja parse time: 0.892976999283
+
+biom summarize-table -i output/David_et_al.biom -o ninja/otu_summary.txt
+summarize_taxa.py -i output/David_et_al.biom -o output/taxonomy_summaries/ -L 1
+summarize_taxa.py -i output/David_et_al.biom -o output/taxonomy_summaries/ -L 2
+summarize_taxa.py -i output/David_et_al.biom -o output/taxonomy_summaries/ -L 3
+summarize_taxa.py -i output/David_et_al.biom -o output/taxonomy_summaries/ -L 4
+summarize_taxa.py -i output/David_et_al.biom -o output/taxonomy_summaries/ -L 5
+summarize_taxa.py -i output/David_et_al.biom -o output/taxonomy_summaries/ -L 6
+summarize_taxa.py -i output/David_et_al.biom -o output/taxonomy_summaries/ -L 7
+alpha_diversity.py -i output/David_et_al.biom -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree -o output/alpha_div/alphadiv.txt
+beta_diversity.py -i output/David_et_al.biom -m weighted_unifrac -o output/beta_div/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/David_et_al.biom -m unweighted_unifrac -o output/beta_div/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/David_et_al.biom -m bray_curtis -o output/beta_div/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DD111. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DD118. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DD39. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DIET49. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DIET52. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.ID112. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.ID125. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DD111. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DD118. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DD39. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DIET49. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.DIET52. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.ID112. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/qiime/beta_metrics.py:144: UserWarning: unifrac had no information for sample ITS3.ID125. Distances involving that sample aren't meaningful
+  sam_i + ". Distances involving that sample aren't meaningful")
+/macqiime/anaconda/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2507: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  VisibleDeprecationWarning)
+single_rarefaction.py -i output/David_et_al.biom -o output/rare_David_et_al.biom -d 500
+biom summarize-table -i output/rare_David_et_al.biom -o ninja/otu_summary_rare.txt
+summarize_taxa.py -i output/rare_David_et_al.biom -o output/taxonomy_summaries_rare/ -L 1
+summarize_taxa.py -i output/rare_David_et_al.biom -o output/taxonomy_summaries_rare/ -L 2
+summarize_taxa.py -i output/rare_David_et_al.biom -o output/taxonomy_summaries_rare/ -L 3
+summarize_taxa.py -i output/rare_David_et_al.biom -o output/taxonomy_summaries_rare/ -L 4
+summarize_taxa.py -i output/rare_David_et_al.biom -o output/taxonomy_summaries_rare/ -L 5
+summarize_taxa.py -i output/rare_David_et_al.biom -o output/taxonomy_summaries_rare/ -L 6
+summarize_taxa.py -i output/rare_David_et_al.biom -o output/taxonomy_summaries_rare/ -L 7
+alpha_diversity.py -i output/rare_David_et_al.biom -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree -o output/alpha_div_rare/rare_alphadiv.txt
+beta_diversity.py -i output/rare_David_et_al.biom -m weighted_unifrac -o output/beta_div_rare/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/rare_David_et_al.biom -m unweighted_unifrac -o output/beta_div_rare/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/rare_David_et_al.biom -m bray_curtis -o output/beta_div_rare/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+/macqiime/anaconda/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2507: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  VisibleDeprecationWarning)

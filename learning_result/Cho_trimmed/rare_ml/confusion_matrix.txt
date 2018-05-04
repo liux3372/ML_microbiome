@@ -1,0 +1,6 @@
+True\Predicted	Chlortetracycline	Control	Penicillin	Vancomycin	VancomycinPenicillin	Class error
+Chlortetracycline	5	0	0	0	2	0.285714285714286
+Control	0	10	0	0	0	0
+Penicillin	0	0	10	0	0	0
+Vancomycin	0	0	1	9	0	0.1
+VancomycinPenicillin	0	0	0	1	9	0.1

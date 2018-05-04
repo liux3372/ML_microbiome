@@ -1,0 +1,54 @@
+Ninja 1.3.1
+Ninja database directory is is/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97
+Running Ninja filter...
+"/Users/xinyuan/Desktop/MICE8992/ninja/bin/ninja_filter_mac" "Bushman_enterotypes_cafe_study_1010_ref_13_8/Bushman_enterotypes_cafe_study_1010_split_library_seqs.fna" "/Users/xinyuan/Desktop/machine-learning/data/Bushman_enterotypes_cafe_study_1010_ref_13_8/ninja/ninja"  RC D 1
+Not using paired-end reads 
+Performing NINJA replicon-denoising at 1 compacted reads.
+Reverse complementing the sequences.
+Number of sequences: 352652
+Total reads considered: 352652
+
+DONE SORTING. 
+95 Samples found.
+Ninja filter time: 0.816043138504
+Running Bowtie...
+/Users/xinyuan/Desktop/MICE8992/ninja/bowtie2-align-s --no-head -x /Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97 -S "/Users/xinyuan/Desktop/machine-learning/data/Bushman_enterotypes_cafe_study_1010_ref_13_8/ninja/alignments.txt" --np 0 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min "L,0,-0.03" --norc -f "/Users/xinyuan/Desktop/machine-learning/data/Bushman_enterotypes_cafe_study_1010_ref_13_8/ninja/ninja_filt.fa" -p 4 -k 1
+
+Bowtie time: 11.1902070045
+Running Ninja parse...
+"/Users/xinyuan/Desktop/MICE8992/ninja/bin/ninja_parse_filtered_mac" "/Users/xinyuan/Desktop/machine-learning/data/Bushman_enterotypes_cafe_study_1010_ref_13_8/ninja/ninja" "/Users/xinyuan/Desktop/machine-learning/data/Bushman_enterotypes_cafe_study_1010_ref_13_8/ninja/alignments.txt" "/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97.db" "/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97.taxonomy"
+Opened /Users/xinyuan/Desktop/machine-learning/data/Bushman_enterotypes_cafe_study_1010_ref_13_8/ninja/ninja_otutable.biom for OTU Table writing
+Total OTUs available: 99322
+Number of unique samples: 95, max reads: 55629
+Total reads expanded: 341396
+Run complete.
+Ninja parse time: 0.185631036758
+summarize_taxa.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries/ -L 1
+summarize_taxa.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries/ -L 2
+summarize_taxa.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries/ -L 3
+summarize_taxa.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries/ -L 4
+summarize_taxa.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries/ -L 5
+summarize_taxa.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries/ -L 6
+summarize_taxa.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries/ -L 7
+alpha_diversity.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree -o output/alpha_div/alphadiv.txt
+beta_diversity.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -m weighted_unifrac -o output/beta_div/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -m unweighted_unifrac -o output/beta_div/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -m bray_curtis -o output/beta_div/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+/macqiime/anaconda/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2507: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  VisibleDeprecationWarning)
+biom summarize-table -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o ninja/otu_summary.txt
+single_rarefaction.py -i output/Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -d 1000
+summarize_taxa.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 1
+summarize_taxa.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 2
+summarize_taxa.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 3
+summarize_taxa.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 4
+summarize_taxa.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 5
+summarize_taxa.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 6
+summarize_taxa.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o output/taxonomy_summaries_rare/ -L 7
+alpha_diversity.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree -o output/alpha_div_rare/rare_alphadiv.txt
+beta_diversity.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -m weighted_unifrac -o output/beta_div_rare/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -m unweighted_unifrac -o output/beta_div_rare/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+beta_diversity.py -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -m bray_curtis -o output/beta_div_rare/ -t /macqiime/anaconda/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+/macqiime/anaconda/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2507: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  VisibleDeprecationWarning)
+biom summarize-table -i output/rare_Bushman_enterotypes_cafe_study_1010_ref_13_8.biom -o ninja/otu_summary_rare.txt

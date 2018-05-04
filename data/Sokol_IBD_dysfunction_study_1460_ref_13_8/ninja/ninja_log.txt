@@ -1,0 +1,25 @@
+Ninja 1.3.1
+Ninja database directory is is/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97
+Running Ninja filter...
+"/Users/xinyuan/Desktop/MICE8992/ninja/bin/ninja_filter_mac" "Sokol_IBD_dysfunction_study_1460_ref_13_8/Sokol_IBD_dysfunction_study_1460_split_library_seqs.fna" "/Users/xinyuan/Desktop/machine-learning4/data/Sokol_IBD_dysfunction_study_1460_ref_13_8/ninja/ninja"  RC D 1
+Not using paired-end reads 
+Performing NINJA replicon-denoising at 1 compacted reads.
+Reverse complementing the sequences.
+Number of sequences: 971384
+Total reads considered: 971384
+
+DONE SORTING. 
+233 Samples found.
+Ninja filter time: 2.54771995544
+Running Bowtie...
+/Users/xinyuan/Desktop/MICE8992/ninja/bowtie2-align-s --no-head -x /Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97 -S "/Users/xinyuan/Desktop/machine-learning4/data/Sokol_IBD_dysfunction_study_1460_ref_13_8/ninja/alignments.txt" --np 0 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min "L,0,-0.03" --norc -f "/Users/xinyuan/Desktop/machine-learning4/data/Sokol_IBD_dysfunction_study_1460_ref_13_8/ninja/ninja_filt.fa" -p 4 -k 1
+
+Bowtie time: 131.129766941
+Running Ninja parse...
+"/Users/xinyuan/Desktop/MICE8992/ninja/bin/ninja_parse_filtered_mac" "/Users/xinyuan/Desktop/machine-learning4/data/Sokol_IBD_dysfunction_study_1460_ref_13_8/ninja/ninja" "/Users/xinyuan/Desktop/machine-learning4/data/Sokol_IBD_dysfunction_study_1460_ref_13_8/ninja/alignments.txt" "/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97.db" "/Users/xinyuan/Desktop/MICE8992/ninja/databases/greengenes97/greengenes97.taxonomy"
+Opened /Users/xinyuan/Desktop/machine-learning4/data/Sokol_IBD_dysfunction_study_1460_ref_13_8/ninja/ninja_otutable.biom for OTU Table writing
+Total OTUs available: 99322
+Number of unique samples: 233, max reads: 163663
+Total reads expanded: 865254
+Run complete.
+Ninja parse time: 0.605898857117

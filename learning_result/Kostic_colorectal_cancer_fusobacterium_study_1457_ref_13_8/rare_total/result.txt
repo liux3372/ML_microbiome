@@ -1,0 +1,10 @@
+[1] "standard deviation"
+[1] 0.01254786
+[1] "summary"
+       V1        
+ Min.   :0.8056  
+ 1st Qu.:0.8278  
+ Median :0.8389  
+ Mean   :0.8356  
+ 3rd Qu.:0.8444  
+ Max.   :0.8667  
